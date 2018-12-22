@@ -4,19 +4,20 @@
     --marvelBlue: #518cca;
     --marvelRed: #e23636;
     --marvelOrange: #f78f3f;
+    background-image: url("https://www.transparenttextures.com/patterns/billie-holiday.png");
 }
-
 
 body {
     margin: 0;
 }
+
 header {
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: auto;
+    margin-bottom: 10px;
     padding: 30px;
     background:url(https://images5.alphacoders.com/399/399453.jpg);
     background-position: 40% 55%;
@@ -25,14 +26,14 @@ header {
 }
 
 header .header-image {
-    width: 380px;
-    height: 250px;
+    width:30%;
+    min-width: 280px; /* maintain width when browser shrinks */
+    height:auto;
     border: 4px solid var(--marvelBlue);
-    border-radius: 20px;
-    
+    border-radius: 20px;    
 }
 
-header h1 {
+header #title {
     font-family: Marvel; /* font from cssfontstack.com */
     margin-left: 20px;
     padding: 6px;
@@ -41,15 +42,100 @@ header h1 {
     text-shadow: #000 2px 2px 0px;
     background-color: rgba(237,29,36, 0.8);
     color:white;
-   
 }
+
 .empty-item {
-    width: 22vw;
-    
+    width: 22vw;  
 }
+
 .year-item {
     display: inline;
     list-style-type: none;
     background-color:red;
 }
 
+.hr {
+    height: 1.74vw;
+    background: rgba(255, 255, 255, 0.1) url(https://cdn4.iconfinder.com/data/icons/famous-characters-add-on-vol-1-flat/48/Famous_Character_-_Add_On_1-14-512.png) scroll center;
+    background-size: 2.6%; /* shrink original image (512px) to use as hr */
+    margin-bottom: 1vh;
+}
+
+.hr hr {
+    display:none;
+}
+
+#img-div {
+    float:left;
+    margin-left: 10px;
+}
+
+#image {
+    width: 30vw;
+    height: auto;
+    border-radius: 5px;
+}
+
+#img-caption {
+    float:right;
+    width: 68%;
+    height: auto;   
+}
+
+#caption {
+    font-size: 2.2vw;
+    font-style: italic;
+    padding: 2%;
+    padding-bottom: 0px;
+    font-weight: 700;
+}
+
+#tribute-info {
+    float: right;
+    width: 67%;
+    height:auto;
+    margin: 0.5%;
+}
+
+.tribute-text {
+    font-size: 1.25vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#quote {
+    float:right;
+}
+
+#quote blockquote {
+    text-align: right;
+}
+
+#quote blockquote span {
+    font-size: 100px;
+    line-height: 0.1em;
+    opacity: 0.9;
+}
+#quote blockquote span::after {
+    content: " - Stan Lee";
+    font-weight:bold;
+    font-size: 20px;
+    color: var(--marvelBlue); 
+}
+
+.subtext {
+    clear: both;
+}
+
+@media (max-width:700px) {
+    header {
+        height:400px;
+        flex-flow: column-reverse;
+    }
+}
+
+@media (max-width: 763px) {
+    #hr {
+        height: 4vw;
+        background-size: 5%;
+    }
+}
