@@ -122,10 +122,36 @@ header #title {
     color: var(--marvelBlue); 
 }
 
-.subtext {
+.timeline {
     clear: both;
+    padding: 2%;
 }
 
+#timeline-title {
+  font-size: 48px;
+  margin: 0;  
+}
+
+.timeline ul{
+    font-size:24px;
+}
+
+.timeline ul li {
+    padding: 1.5vh;
+    text-shadow: 2px 2px 2px rgb(0,0,0, 0.1);
+}
+
+.hidden {
+    border-bottom: 2px dotted #000;
+}
+.hidden img {
+    display:none
+}
+
+.hidden:hover img {
+    display:inline-block;
+    float:right;
+}
 @media (max-width:700px) {
     header {
         height:400px;
