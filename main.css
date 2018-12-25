@@ -115,6 +115,7 @@ header #title {
     line-height: 0.1em;
     opacity: 0.9;
 }
+
 #quote blockquote span::after {
     content: " - Stan Lee";
     font-weight:bold;
@@ -144,14 +145,56 @@ header #title {
 .hidden {
     border-bottom: 2px dotted #000;
 }
+
 .hidden img {
-    display:none
+    display:none;
+    max-width: 300px;
 }
 
 .hidden:hover img {
     display:inline-block;
-    float:right;
+    float: right;
 }
+
+#spiderman-quote {
+    display:flex;
+    justify-content: center;
+}
+
+#spiderman-quote blockquote {
+    border-left: 10px solid var(--marvelBlue);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0px 1px 1px var(--marvelRed);
+    color: var(--marvelRed);
+    position:relative;
+}
+
+#spiderman-quote blockquote::before {
+    content: open-quote;
+    color: var(--marvelOrange);
+    font-size: 5em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -0.4em;
+}
+
+#spiderman-quote blockquote::after {
+    content: url(https://upload.wikimedia.org/wikipedia/commons/1/15/Signature_of_Stan_Lee.svg);
+    position: absolute;
+    left: 21em;
+    top: 2vw;
+}
+
+#tribute-link {
+    display:flex;
+    justify-content: center;
+}
+
+/** stack header title on top of header image **/
 @media (max-width:700px) {
     header {
         height:400px;
@@ -159,9 +202,57 @@ header #title {
     }
 }
 
+/** shrink ironman HR accordingly**/
 @media (max-width: 763px) {
     #hr {
         height: 4vw;
         background-size: 5%;
     }
+}
+
+/** adjust stan lee's quote and signature **/
+@media (max-width: 1166px) {
+    #spiderman-quote blockquote {
+        transform: scale(0.8);
+    }
+}
+
+/** adjust positioning of signature further to right due to window resize **/
+@media (max-width:813px) {
+    #spiderman-quote blockquote::after {
+        left: 65vw;
+    }
+}
+
+/** re-size quote and tribute text **/
+@media (max-width:1077px) {
+    #quote {
+        transform: scale(0.6);
+    }
+    .tribute-text {
+        font-size: 14px;
+    }
+}
+
+/** centers image and tribution info section on re-size**/
+@media (max-width: 771px) {
+    #img-div {
+        margin-left: 35%;
+        float:none;
+    }
+
+    #img-caption {
+        margin:auto;
+        float:none;
+    }
+    
+    #caption {
+        font-size: 14px;
+    }
+
+    #tribute-info {
+        margin:auto;
+        float:none;
+    }
+
 }
